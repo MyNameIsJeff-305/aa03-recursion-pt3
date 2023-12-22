@@ -17,9 +17,9 @@ factorial(5); // 120
 ***********************************************************************/
 
 function factorial(num) {
-  // Your code here 
+  if(num === 1) return 1;
+  return factorial(num -1) * num;
 }
-  
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = factorial;
   
