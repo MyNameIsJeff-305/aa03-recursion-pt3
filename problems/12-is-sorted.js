@@ -12,14 +12,12 @@ isSorted([5, 4, 3, 2, 1]); // false
 
 
 function isSorted(arr) {
-  if(arr.length === 2) return arr[0] < arr[1];
-  for (let index = 0; index < arr.length; index++) {
-    let newArr = [arr[index], arr[index + 1]];
-    return isSorted(newArr);
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i] > arr[i + 1]) return false;
+    return isSorted(arr.splice(1));
   }
+  return true;
 }
-
-console.log(isSorted([1, 2, 4, 3, 5]));
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = isSorted;
